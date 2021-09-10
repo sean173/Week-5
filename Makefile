@@ -8,7 +8,7 @@ BUILDDIR = build
 
 LIBS = -I$(LIB)
 
-SRCFILES := $(wildcard src/*.c)
+SRCFILES := $(wildcard ${SRCDIR}/*.c)
 OBJFILES := $(patsubst $(SRCDIR)/%.c, $(BUILDDIR)/%.o, ${SRCFILES})
 
 all : $(TARGET)
@@ -19,6 +19,5 @@ $(BUILDDIR)/%.o : $(SRCDIR)/%.c $(LIB)/%.h
 $(TARGET) : $(OBJFILES)
 	${CC} ${CFLAGS} ${LIBS} -o $@ $^
 
-
 clean:
-	rm *.o
+	rm ${BUILDDIR}/*.o

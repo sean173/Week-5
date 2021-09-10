@@ -2,5 +2,6 @@
 
 const char *greeting()
 {
-    return "Hello World\n";
+    char *hello = "Hello World."; 
+    return hello;
 }
